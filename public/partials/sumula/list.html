@@ -1,0 +1,29 @@
+<div class="page-header">
+	<h1>Sumula List</h1>
+</div>
+<div class="row">
+	<div class="col-xs-5">
+		<a href="#/newSumula" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New Sumula</a>
+	</div>
+	<div class="col-xs-7">
+		<input type="text" class="form-control" ng-model="query" placeholder="Search for a sumula">
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<hr>
+	</div>
+</div>
+<div class="row" ng-switch on="sumulas.length">
+	<ul ng-switch-when="0">
+		<li>
+			<em>No sumulas in database. Would you like to <a href="#/newSumula">create one</a>?
+		</li>
+	</ul>
+	<ul ng-switch-default>
+		<li ng-repeat="sumula in sumulas | filter:query">
+			<a href="#/sumula/{{sumula._id}}">{{sumula.data}} - {{sumula.quadro}} - {{sumula.adversario}}</a>
+		</li>
+	</ul>
+</div>
+<p>&nbsp;</p>

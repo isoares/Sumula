@@ -1,0 +1,47 @@
+<div class="page-header">
+	<h1>View Sumula</h1>
+</div>
+<div class="well well-lg">
+	<div class="row">
+		<div class="col-xs-6">
+			<strong>Data</strong><br>
+			{{sumula.data}}
+		</div>
+		<div class="col-xs-6">
+			<strong>Quadro</strong><br>
+			{{sumula.quadro}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<label>BSF Futsal</label>
+		</div>
+		<div class="col-xs-6">
+			<strong>Adversario</strong><br>
+			{{sumula.adversario}}</td>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<strong>GolsFavor</strong><br>
+			{{sumula.golsFavor}}
+		</div>
+		<div class="col-xs-6">
+			<strong>GolsContra</strong><br>
+			{{sumula.golsContra}}
+		</div>
+	</div>
+</div>
+<div>
+	<table class="result-table">
+		<tbody>
+			<tr ng-repeat="atleta in sumula.atletas">
+				<td>{{atleta.idAtleta.nome}}</td>
+				<td>{{atleta.gols}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<p><hr></p>
+	<p><a href="#/sumulas" class="btn btn-default" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Back to Sumula List</a></p>
+</div>
+<p>&nbsp;</p>
