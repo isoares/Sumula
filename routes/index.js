@@ -10,6 +10,9 @@ exports.indexSumula = function(req, res) {
 exports.indexAtleta = function(req, res) {
 	res.render('atleta', {title: 'Atletas'});
 };
+exports.indexArtilharia = function(req, res) {
+	res.render('artilharia', {title: 'Artilharia'});
+};
 // JSON API for list of sumulas
 exports.listSumula = function(req, res) {
 	Sumula.find({}, function(error, sumulas) {
@@ -79,4 +82,34 @@ exports.createAtleta = function(req, res) {
 			res.json(doc);
 		}	 
 	});
+};
+//JSON API for list of artilharia
+exports.listArtilharia = function(req, res) {	
+	Sumula.aggregate(
+			[
+				{
+					$unwind : "$atletas"
+				},
+				{
+					$group : {
+						_id: "$atletas.idAtleta",
+						gols: { $sum: "$atletas.gols" }
+					}
+				},
+				{
+					$lookup: {
+						from: "atletas",
+						localField: "_id",
+						foreignField: "_id",
+						as: "atl"
+					}
+				},
+				{
+					$sort : { gols : -1 }
+				}
+			],
+			function(error, artilheiros) {
+				res.json(artilheiros);
+			}
+	);
 };

@@ -1,17 +1,23 @@
 angular.module('sumulaServices', ['ngResource']).
-  factory('Sumula', function($resource) {
-    return $resource('sumulas/:sumulaId', {}, {
-      query: { method: 'GET', params: { sumulaId: 'sumulas' }, isArray: true }
-    })
-  }).
-  factory('Atleta', function($resource) {
-	    return $resource('atletas/:atletaId', {}, {
-	      query: { method: 'GET', params: { atletaId: 'atletas' }, isArray: true }
-	    })
-	  });
+	factory('Sumula', function($resource) {
+		return $resource('sumulas/:sumulaId', {}, {
+			query: { method: 'GET', params: { sumulaId: 'sumulas' }, isArray: true }
+		})
+	}).
+	factory('Atleta', function($resource) {
+		return $resource('atletas/:atletaId', {}, {
+			query: { method: 'GET', params: { atletaId: 'atletas' }, isArray: true }
+		})
+	});
 angular.module('atletaServices', ['ngResource']).
-  factory('Atleta', function($resource) {
-    return $resource('atletas/:atletaId', {}, {
-      query: { method: 'GET', params: { atletaId: 'atletas' }, isArray: true }
-    })
-  });
+	factory('Atleta', function($resource) {
+		return $resource('atletas/:atletaId', {}, {
+			query: { method: 'GET', params: { atletaId: 'atletas' }, isArray: true }
+		})
+	});
+angular.module('artilhariaServices', ['ngResource']).
+	factory('Sumula', function($resource) {
+		return $resource('artilheiros/:sumulaId', {}, {
+			query: { method: 'GET', params: { sumulaId: 'artilheiros' }, isArray: true }
+		})
+	});

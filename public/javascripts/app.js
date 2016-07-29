@@ -14,3 +14,9 @@ angular.module('atletas', ['atletaServices'])
 			when('/newAtleta', { templateUrl: 'partials/atleta/new.html', controller: AtletaNewCtrl }).
 			otherwise({ redirectTo: '/atletas' });
 	}]);
+angular.module('artilheiros', ['artilhariaServices'])
+.config(['$routeProvider', function($routeProvider) {
+	$routeProvider.
+		when('/artilheiros', { templateUrl: 'partials/artilharia/list.html', controller: ArtilhariaListCtrl }).
+		otherwise({ redirectTo: '/artilheiros' });
+}]);

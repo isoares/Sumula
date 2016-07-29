@@ -89,3 +89,7 @@ function AtletaNewCtrl($scope, $location, Atleta) {
 		}
 	};
 }
+//Managing the artilharia list
+function ArtilhariaListCtrl($scope, Sumula) {
+	$scope.artilheiros = Sumula.query();
+}
