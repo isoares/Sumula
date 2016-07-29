@@ -50,6 +50,6 @@ app.post('/atletas', routes.createAtleta);
 
 app.get('/artilheiros/artilheiros', routes.listArtilharia);
 
-server.listen(app.get('port'), function(){
+server.listen(app.get('port'), app.get('ip'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
