@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-var db = mongoose.createConnection('localhost', 'sumulasapp');
+//var db = mongoose.createConnection('localhost', 'sumulasapp');
+//mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
+var db = mongoose.createConnection($OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT, 'sumulajs');
 var SumulaSchema = require('../models/Sumula.js').SumulaSchema;
 var Sumula = db.model('sumulas', SumulaSchema);
 var AtletaSchema = require('../models/Atleta.js').AtletaSchema;
