@@ -4,7 +4,9 @@ var mongoose = require('mongoose');
 //var db = mongoose.createConnection($OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT, 'sumulajs');
 //var db = mongoose.createConnection('localhost', 'sumulajs');
 
-
+//mongo_url = process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME;
+//OPENSHIFT_MONGODB_DB_URL has the below format:
+//(e.g. mongodb://<username>:<password>@<hostname>:<port>/)
 
 //default to a 'localhost' configuration:
 var connection_string = '127.0.0.1:27017/sumulasapp';
