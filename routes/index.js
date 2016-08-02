@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 //var db = mongoose.createConnection('localhost', 'sumulasapp');
 //mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
-var db = mongoose.createConnection($OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT, 'sumulajs');
+var db = mongoose.createConnection(process.env.OPENSHIFT_MONGODB_DB_HOST:process.env.OPENSHIFT_MONGODB_DB_PORT, 'sumulajs');
 //var db = mongoose.createConnection('localhost', 'sumulajs');
 //var SumulaSchema = require('../models/Sumula.js').SumulaSchema;
 //var Sumula = db.model('sumulas', SumulaSchema);
