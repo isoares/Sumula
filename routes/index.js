@@ -18,20 +18,20 @@ exports.indexArtilharia = function(req, res) {
 };
 // JSON API for list of sumulas
 exports.listSumula = function(req, res) {
-	Sumula.find({}, function(error, sumulas) {
-		res.json(sumulas);
-	});
+//	Sumula.find({}, function(error, sumulas) {
+//		res.json(sumulas);
+//	});
 };
 // JSON API for getting a single sumula
 exports.sumula = function(req, res) {
 	var sumulaId = req.params.id;
-	Sumula.findById(sumulaId, '', { lean: true }).populate('atletas.idAtleta').exec(function(err, sumula) {
-		if(sumula) {
-			res.json(sumula);
-		} else {
-			res.json({error:true});
-		}
-	});
+//	Sumula.findById(sumulaId, '', { lean: true }).populate('atletas.idAtleta').exec(function(err, sumula) {
+//		if(sumula) {
+//			res.json(sumula);
+//		} else {
+//			res.json({error:true});
+//		}
+//	});
 };
 // JSON API for creating a new sumula
 exports.createSumula = function(req, res) {
@@ -39,80 +39,80 @@ exports.createSumula = function(req, res) {
 //			atletas = reqBody.atletas.filter(function(v) { return v.idAtleta != ''; }),
 //			atletas = reqBody.atletas;
 	
-	var atletas = [];
-	reqBody.atletas.forEach(function(item) {
-		var itemAtleta = {idAtleta: item._id, gols: item.gols};
-			
-		atletas.push(itemAtleta);
-	});
-	
-	var sumulaObj = {data: reqBody.data, quadro: reqBody.quadro, adversario: reqBody.adversario, golsFavor: reqBody.golsFavor, golsContra: reqBody.golsContra, atletas: atletas};
-	var sumula = new Sumula(sumulaObj);
-	sumula.save(function(err, doc) {
-		if(err || !doc) {
-			throw 'Error';
-		} else {
-			res.json(doc);
-		}	 
-	});
+//	var atletas = [];
+//	reqBody.atletas.forEach(function(item) {
+//		var itemAtleta = {idAtleta: item._id, gols: item.gols};
+//			
+//		atletas.push(itemAtleta);
+//	});
+//	
+//	var sumulaObj = {data: reqBody.data, quadro: reqBody.quadro, adversario: reqBody.adversario, golsFavor: reqBody.golsFavor, golsContra: reqBody.golsContra, atletas: atletas};
+//	var sumula = new Sumula(sumulaObj);
+//	sumula.save(function(err, doc) {
+//		if(err || !doc) {
+//			throw 'Error';
+//		} else {
+//			res.json(doc);
+//		}	 
+//	});
 };
 //JSON API for list of atletas
 exports.listAtleta = function(req, res) {
-	Atleta.find({}, function(error, atletas) {
-		res.json(atletas);
-	});
+//	Atleta.find({}, function(error, atletas) {
+//		res.json(atletas);
+//	});
 };
 // JSON API for getting a single atleta
 exports.atleta = function(req, res) {  
-	var atletaId = req.params.id;
-	Atleta.findById(atletaId, '', { lean: true }, function(err, atleta) {
-		if(atleta) {
-			res.json(atleta);
-		} else {
-			res.json({error:true});
-		}
-	});
+//	var atletaId = req.params.id;
+//	Atleta.findById(atletaId, '', { lean: true }, function(err, atleta) {
+//		if(atleta) {
+//			res.json(atleta);
+//		} else {
+//			res.json({error:true});
+//		}
+//	});
 };
 // JSON API for creating a new atleta
 exports.createAtleta = function(req, res) {
-	var reqBody = req.body,
-			atletaObj = {nome: reqBody.nome};
-	var atleta = new Atleta(atletaObj);
-	atleta.save(function(err, doc) {
-		if(err || !doc) {
-			throw 'Error';
-		} else {
-			res.json(doc);
-		}	 
-	});
+//	var reqBody = req.body,
+//			atletaObj = {nome: reqBody.nome};
+//	var atleta = new Atleta(atletaObj);
+//	atleta.save(function(err, doc) {
+//		if(err || !doc) {
+//			throw 'Error';
+//		} else {
+//			res.json(doc);
+//		}	 
+//	});
 };
 //JSON API for list of artilharia
 exports.listArtilharia = function(req, res) {	
-	Sumula.aggregate(
-			[
-				{
-					$unwind : "$atletas"
-				},
-				{
-					$group : {
-						_id: "$atletas.idAtleta",
-						gols: { $sum: "$atletas.gols" }
-					}
-				},
-				{
-					$lookup: {
-						from: "atletas",
-						localField: "_id",
-						foreignField: "_id",
-						as: "atl"
-					}
-				},
-				{
-					$sort : { gols : -1 }
-				}
-			],
-			function(error, artilheiros) {
-				res.json(artilheiros);
-			}
-	);
+//	Sumula.aggregate(
+//			[
+//				{
+//					$unwind : "$atletas"
+//				},
+//				{
+//					$group : {
+//						_id: "$atletas.idAtleta",
+//						gols: { $sum: "$atletas.gols" }
+//					}
+//				},
+//				{
+//					$lookup: {
+//						from: "atletas",
+//						localField: "_id",
+//						foreignField: "_id",
+//						as: "atl"
+//					}
+//				},
+//				{
+//					$sort : { gols : -1 }
+//				}
+//			],
+//			function(error, artilheiros) {
+//				res.json(artilheiros);
+//			}
+//	);
 };
