@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 //OPENSHIFT_MONGODB_DB_URL has the below format:
 //(e.g. mongodb://<username>:<password>@<hostname>:<port>/)
 
-//default to a 'localhost' configuration:
+//default to a 'localhost' configuration: 
 var connection_string = '127.0.0.1:27017/sumulasapp';
 //if OPENSHIFT env variables are present, use the available connection info:
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
