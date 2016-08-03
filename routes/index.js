@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var db = mongoose.createConnection('localhost', 'sumulasapp');
+//var db = mongoose.createConnection('localhost', 'sumulasapp');
 //mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
 //var db = mongoose.createConnection($OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT, 'sumulajs');
 //var db = mongoose.createConnection('localhost', 'sumulajs');
@@ -9,17 +9,17 @@ var db = mongoose.createConnection('localhost', 'sumulasapp');
 //(e.g. mongodb://<username>:<password>@<hostname>:<port>/)
 
 //default to a 'localhost' configuration:
-//var connection_string = '127.0.0.1:27017/sumulasapp';
+var connection_string = '127.0.0.1:27017/sumulasapp';
 //if OPENSHIFT env variables are present, use the available connection info:
-//if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
-// connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
-// process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
-// process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
-// process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
-// process.env.OPENSHIFT_APP_NAME;
-//}
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+ connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+ process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+ process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+ process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+ process.env.OPENSHIFT_APP_NAME;
+}
 
-//var db = mongoose.createConnection('mongodb://' + connection_string);
+var db = mongoose.createConnection('mongodb://' + connection_string);
 
 
 
