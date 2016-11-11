@@ -1,0 +1,49 @@
+div.page-header
+	h1 Create New Sumula
+
+form(role="form", ng-submit="createSumula()")
+	div.row
+		div.col-xs-6
+			div.form-group
+				label(for="sumulaData") Data
+				input.form-control(type="text" ng-model="sumula.data" id="sumulaData" placeholder="Enter sumula data")
+		div.col-xs-6
+			div.form-group
+				label(for="sumulaQuadro") Quadro
+				input.form-control(type="text" ng-model="sumula.quadro" id="sumulaQuadro" placeholder="Enter sumula quadro")
+	div.row
+		div.col-xs-6
+			label BSF Futsal
+		div.col-xs-6
+			div.form-group
+				label(for="sumulaAdversario") Adversario
+				input.form-control(type="text" ng-model="sumula.adversario" id="sumulaAdversario" placeholder="Enter sumula adversario")
+	div.row
+		div.col-xs-6
+			div.form-group
+				label(for="sumulaGolsFavor") Gols Favor
+				input.form-control(type="text" ng-model="sumula.golsFavor" id="sumulaGolsFavor" placeholder="Enter sumula golsFavor")
+		div.col-xs-6
+			div.form-group
+				label(for="sumulaGolsContra") Gols Contra
+				input.form-control(type="text" ng-model="sumula.golsContra" id="sumulaGolsContra" placeholder="Enter sumula golsContra")
+	p
+		hr
+	div.form-group
+		div(ng-repeat="atleta in sumula.atletas")
+			div.row
+				div.col-xs-6
+					label {{atleta.nome}}
+				div.col-xs-6
+					input.form-control(type="text" ng-model="atleta.gols" placeholder="Enter {{atleta.nome}} gols")
+					br
+	p
+		hr
+	div.row
+		div.col-xs-6
+			a(href="#/sumulas").btn.btn-default
+				span.glyphicon.glyphicon-arrow-left
+				|  Back to Sumula List
+		div.col-xs-6
+			button.btn.btn-primary.pull-right(type="submit") Create Sumula
+	p

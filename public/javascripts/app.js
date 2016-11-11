@@ -1,9 +1,9 @@
 angular.module('sumulas', ['sumulaServices'])
 	.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
-			when('/sumulas', { templateUrl: 'partials/sumula/list.html', controller: SumulaListCtrl }).
-			when('/sumula/:sumulaId', { templateUrl: 'partials/sumula/item.html', controller: SumulaItemCtrl }).
-			when('/newSumula', { templateUrl: 'partials/sumula/new.html', controller: SumulaNewCtrl }).
+			when('/sumulas', { templateUrl: 'partials/sumula/list', controller: SumulaListCtrl }).
+			when('/sumula/:sumulaId', { templateUrl: 'partials/sumula/item', controller: SumulaItemCtrl }).
+			when('/newSumula', { templateUrl: 'partials/sumula/new', controller: SumulaNewCtrl }).
 			otherwise({ redirectTo: '/sumulas' });
 	}]);
 angular.module('atletas', ['atletaServices'])

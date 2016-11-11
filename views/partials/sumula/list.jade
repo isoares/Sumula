@@ -1,0 +1,34 @@
+div.page-header
+	h1 Sumula List
+div.row
+	div.col-xs-5
+		a(href="#/newSumula").btn.btn-default
+			span.glyphicon.glyphicon-plus
+			|  New Sumula
+	div.col-xs-7
+		input.form-control(type="text" ng-model="query" placeholder="Search for a sumula")
+div.row
+	div.col-xs-12
+		hr
+div.row(ng-switch="sumulas.length")
+	ul(ng-switch-when="0")
+		li
+			em No sumulas in database. Would you like to
+					a(href="#/newSumula")  create one?
+	table(ng-switch-default)
+		thead
+			tr
+				th Sumula
+				th Data
+				th Quadro
+				th Adversario
+				th Resultado
+		tbody
+			tr(ng-repeat="sumula in sumulas | filter:query")
+				td
+					a(href="#/sumula/{{sumula._id}}") {{$index + 1}}
+				td {{sumula.data}}
+				td {{sumula.quadro}}
+				td {{sumula.adversario}}
+				td BSF {{sumula.golsFavor}} x {{sumula.golsContra}} {{sumula.adversario}}
+p

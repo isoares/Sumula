@@ -1,0 +1,41 @@
+div.page-header
+	h1 View Sumula
+div.well.well-lg
+	div.row
+		div.col-xs-6
+			strong Data
+			br
+			{{sumula.data}}
+		div.col-xs-6
+			strong Quadro
+			br
+			{{sumula.quadro}}
+	div.row
+		div.col-xs-6
+			label BSF Futsal
+		div.col-xs-6
+			strong Adversario
+			br
+			{{sumula.adversario}}
+	div.row
+		div.col-xs-6
+			strong GolsFavor
+			br
+			{{sumula.golsFavor}}
+		div.col-xs-6
+			strong GolsContra
+			br
+			{{sumula.golsContra}}
+div
+	table.result-table
+		tbody
+			tr(ng-repeat="atleta in sumula.atletas")
+				td {{atleta.idAtleta.nome}}
+				td {{atleta.gols}}
+	p
+		hr
+	p
+		a(href="#/sumulas").btn.btn-default
+			span.glyphicon.glyphicon-arrow-left
+			|  Back to Sumula List
+p

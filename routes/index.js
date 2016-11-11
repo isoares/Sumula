@@ -27,6 +27,12 @@ var SumulaSchema = require('../models/Sumula.js').SumulaSchema;
 var Sumula = db.model('sumulas', SumulaSchema);
 var AtletaSchema = require('../models/Atleta.js').AtletaSchema;
 var Atleta = db.model('atletas', AtletaSchema);
+
+exports.partials = function (req, res) {
+	var name = req.params.name;
+	res.render('partials/sumula/' + name);
+};
+
 exports.indexSumula = function(req, res) {
 	res.render('sumula', {title: 'Sumulas'});
 };
