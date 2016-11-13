@@ -1,0 +1,21 @@
+div.page-header
+	h1 View Atleta
+div.well.well-lg
+	table
+		tbody
+			tr
+				td
+					strong Id
+				td {{atleta._id}}
+			tr
+				td
+					strong Nome
+				td {{atleta.nome}}
+div
+	p
+		hr
+	p
+		a(href="#/atletas").btn.btn-default
+			span.glyphicon.glyphicon-arrow-left
+			|  Back to Atleta List
+p

@@ -1,0 +1,21 @@
+div.page-header
+	h1 Atleta List
+div.row
+	div.col-xs-5
+		a(href="#/newAtleta").btn.btn-default
+			span.glyphicon.glyphicon-plus
+			|  New Atleta
+	div.col-xs-7
+		input.form-control(type="text" ng-model="query" placeholder="Search for a atleta")
+div.row
+	div.col-xs-12
+		hr
+div.row(ng-switch="atletas.length")
+	ul(ng-switch-when="0")
+		li
+			em No atletas in database. Would you like to
+				a(href="#/newAtleta")  create one?
+	ul(ng-switch-default)
+		li(ng-repeat="atleta in atletas | filter:query")
+			a(href="#/atleta/{{atleta._id}}")  {{atleta.nome}}
+p

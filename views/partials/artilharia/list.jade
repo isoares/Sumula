@@ -1,0 +1,17 @@
+div.page-header
+	h1 Artilharia - 2016
+div.row
+	div.col-xs-5
+	div.col-xs-7
+		input.form-control(type="text" ng-model="query" placeholder="Search for a sumula")
+div.row
+	div.col-xs-12
+		hr
+div.row(ng-switch="artilheiros.length")
+	ul(ng-switch-when="0")
+		li
+			em No sumulas in database.
+	ul(ng-switch-default)
+		li(ng-repeat="atleta in artilheiros | filter:query")
+			{{atleta.atl[0].nome}} - {{atleta.gols}}
+p

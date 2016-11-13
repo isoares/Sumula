@@ -38,7 +38,11 @@ app.get('/', routes.indexSumula);
 app.get('/Sumula', routes.indexSumula);
 app.get('/Atleta', routes.indexAtleta);
 app.get('/Artilharia', routes.indexArtilharia);
-app.get('/partials/sumula/:name', routes.partials);
+
+//Partials
+app.get('/partials/sumula/:name', routes.partialsSumula);
+app.get('/partials/atleta/:name', routes.partialsAtleta);
+app.get('/partials/artilharia/:name', routes.partialsArtilharia);
 
 //MongoDB API Routes
 app.get('/sumulas/sumulas', routes.listSumula);

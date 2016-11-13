@@ -9,14 +9,14 @@ angular.module('sumulas', ['sumulaServices'])
 angular.module('atletas', ['atletaServices'])
 	.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
-			when('/atletas', { templateUrl: 'partials/atleta/list.html', controller: AtletaListCtrl }).
-			when('/atleta/:atletaId', { templateUrl: 'partials/atleta/item.html', controller: AtletaItemCtrl }).
-			when('/newAtleta', { templateUrl: 'partials/atleta/new.html', controller: AtletaNewCtrl }).
+			when('/atletas', { templateUrl: 'partials/atleta/list', controller: AtletaListCtrl }).
+			when('/atleta/:atletaId', { templateUrl: 'partials/atleta/item', controller: AtletaItemCtrl }).
+			when('/newAtleta', { templateUrl: 'partials/atleta/new', controller: AtletaNewCtrl }).
 			otherwise({ redirectTo: '/atletas' });
 	}]);
 angular.module('artilheiros', ['artilhariaServices'])
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
-		when('/artilheiros', { templateUrl: 'partials/artilharia/list.html', controller: ArtilhariaListCtrl }).
+		when('/artilheiros', { templateUrl: 'partials/artilharia/list', controller: ArtilhariaListCtrl }).
 		otherwise({ redirectTo: '/artilheiros' });
 }]);

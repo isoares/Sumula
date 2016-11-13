@@ -28,9 +28,19 @@ var Sumula = db.model('sumulas', SumulaSchema);
 var AtletaSchema = require('../models/Atleta.js').AtletaSchema;
 var Atleta = db.model('atletas', AtletaSchema);
 
-exports.partials = function (req, res) {
+exports.partialsSumula = function (req, res) {
 	var name = req.params.name;
 	res.render('partials/sumula/' + name);
+};
+
+exports.partialsAtleta = function (req, res) {
+	var name = req.params.name;
+	res.render('partials/atleta/' + name);
+};
+
+exports.partialsArtilharia = function (req, res) {
+	var name = req.params.name;
+	res.render('partials/artilharia/' + name);
 };
 
 exports.indexSumula = function(req, res) {
