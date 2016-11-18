@@ -1,0 +1,17 @@
+[
+	{"_id":ObjectId("000000000000000000000001"),"nome": "Atleta 01"},
+	{"_id":ObjectId("000000000000000000000002"),"nome": "Atleta 02"},
+	{"_id":ObjectId("000000000000000000000003"),"nome": "Atleta 03"},
+	{"_id":ObjectId("000000000000000000000004"),"nome": "Atleta 04"},
+	{"_id":ObjectId("000000000000000000000005"),"nome": "Atleta 05"},
+	{"_id":ObjectId("000000000000000000000006"),"nome": "Atleta 06"},
+	{"_id":ObjectId("000000000000000000000007"),"nome": "Atleta 07"},
+	{"_id":ObjectId("000000000000000000000008"),"nome": "Atleta 08"},
+	{"_id":ObjectId("000000000000000000000009"),"nome": "Atleta 09"},
+	{"_id":ObjectId("00000000000000000000000a"),"nome": "Atleta 10"},
+	{"_id":ObjectId("00000000000000000000000b"),"nome": "Atleta 11"},
+	{"_id":ObjectId("00000000000000000000000c"),"nome": "Atleta 12"},
+	{"_id":ObjectId("00000000000000000000000d"),"nome": "Atleta 13"},
+	{"_id":ObjectId("00000000000000000000000e"),"nome": "Atleta 14"},
+	{"_id":ObjectId("00000000000000000000000f"),"nome": "Atleta 15"}
+]

@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 //(e.g. mongodb://<username>:<password>@<hostname>:<port>/)
 
 //default to a 'localhost' configuration:
-var connection_string = '127.0.0.1:27017/sumulasapp';
+var connection_string = '127.0.0.1:27017/sumula';
 //if OPENSHIFT env variables are present, use the available connection info:
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
  connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
